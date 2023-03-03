@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d6faa69eb2f88409b0555ee648540f, type: 3}
+  m_Name: Hand weapon
+  m_EditorClassIdentifier: 
+  ItemName: hand
+  ItemSprite: {fileID: 167080804, guid: 37ea728f4f60ddb46b5fe92ead660b59, type: 3}
+  ItemUISprite: {fileID: 167080804, guid: 37ea728f4f60ddb46b5fe92ead660b59, type: 3}
+  WeaponDamage: 10
+  HitBox: {fileID: 5373270005736055457, guid: c1d9cd21345d77e449c5d8457680e415, type: 3}
+  HitBoxNavigation: {fileID: 11400000, guid: c4d1b26eaffcc254eb85f91b105caa21, type: 2}
+  Permanent: 1
