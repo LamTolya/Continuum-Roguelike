@@ -13,18 +13,19 @@ public class UIWeaponDisplay: MonoBehaviour
   
     private void OnEnable()
     {
-        Weapon.WeaponEquipped += UISetUp;
+        Weapon.WeaponInteracted += UISetUp;
         Weapon.WeaponUsed += SetDurability;
     }
 
     private void OnDisable()
     {
-        Weapon.WeaponEquipped -= UISetUp;
+        Weapon.WeaponInteracted -= UISetUp;
         Weapon.WeaponUsed -= SetDurability;
     }
-    private void UISetUp(WeaponData weaponData)
+    private void UISetUp(Weapon weapon)
     {
         SetColor();
+        WeaponData weaponData = weapon.GetWeaponData();
         weaponName.text = weaponData.ItemName;
         weaponSprite.sprite = weaponData.ItemUISprite;
     }

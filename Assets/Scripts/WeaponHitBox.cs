@@ -10,14 +10,12 @@ public class WeaponHitBox : MonoBehaviour
 
     private void OnEnable()
     {
-        Weapon.WeaponSwapped += Destruct;
         Weapon.WeaponDestroyed += Destruct;
         AttackingController.AttackFinished += PlayAnimation;
     }
     
     private void OnDisable()
     {
-        Weapon.WeaponSwapped -= Destruct;
         Weapon.WeaponDestroyed -= Destruct;
         AttackingController.AttackFinished -= PlayAnimation;
     }
@@ -26,7 +24,6 @@ public class WeaponHitBox : MonoBehaviour
     {
         // add Animator later
         //gameObject.GetComponent<Animator>().SetTrigger("Attack");
-        Debug.Log("animation plays");
     }
 
 
@@ -43,11 +40,4 @@ public class WeaponHitBox : MonoBehaviour
         }
     }
 
-    private void Set()
-    {
-        if (Permanent)
-        {
-            gameObject.SetActive(true);
-        }
-    }
 }

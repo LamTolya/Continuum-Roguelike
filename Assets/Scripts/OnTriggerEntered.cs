@@ -28,7 +28,7 @@ public class OnTriggerEntered : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(Colliders.IndexOf(other) == -1 && other.gameObject.GetComponent<IDamageable>() != null)
+        if(Colliders.IndexOf(other) == -1)
         {
             Colliders.Add(other);
             

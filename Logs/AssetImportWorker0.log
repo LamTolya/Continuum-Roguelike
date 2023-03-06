@@ -15,7 +15,7 @@ C:/Users/lamqu/Desktop/shitpost/Diary/My project
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52989
+64057
 Successfully changed project path to: C:/Users/lamqu/Desktop/shitpost/Diary/My project
 C:/Users/lamqu/Desktop/shitpost/Diary/My project
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ C:/Users/lamqu/Desktop/shitpost/Diary/My project
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [13960] Host "[IP] 172.26.223.159 [Port] 0 [Flags] 2 [Guid] 748322088 [EditorId] 748322088 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-ECTARP72) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [2600] Host "[IP] 192.168.1.69 [Port] 0 [Flags] 2 [Guid] 3013232841 [EditorId] 3013232841 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-ECTARP72) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [13960] Host "[IP] 172.26.223.159 [Port] 0 [Flags] 2 [Guid] 748322088 [EditorId] 748322088 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-ECTARP72) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [2600] Host "[IP] 192.168.1.69 [Port] 0 [Flags] 2 [Guid] 3013232841 [EditorId] 3013232841 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-ECTARP72) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 50.76 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1173.88 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.2.0f1 (35dcd44975df)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.2.0f1/Editor/Data/Resources/UnitySubsystems
@@ -67,44 +67,42 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.2.0f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.2.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.2.0f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56912
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56248
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.037872 seconds.
-- Loaded All Assemblies, in  1.379 seconds
+Registered in 0.054775 seconds.
+- Loaded All Assemblies, in 12.430 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.848 seconds
+- Finished resetting the current domain, in  4.758 seconds
 Domain Reload Profiling:
-	ReloadAssembly (718ms)
-		BeginReloadAssembly (319ms)
+	ReloadAssembly (9673ms)
+		BeginReloadAssembly (4513ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (3ms)
+			CreateAndSetChildDomain (9ms)
 		LoadAllAssembliesAndSetupDomain (0ms)
-			LoadAssemblies (308ms)
+			LoadAssemblies (4494ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (637ms)
-				TypeCache.Initialize (635ms)
-					TypeCache.ScanAssembly (632ms)
-				ResolveRequiredComponents (1ms)
+			SetupTypeCache (2692ms)
+				TypeCache.Initialize (2689ms)
+					TypeCache.ScanAssembly (2682ms)
+				ResolveRequiredComponents (3ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (610ms)
+			SetupLoadedEditorAssemblies (4238ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (31ms)
-				SetLoadedEditorAssemblies (24ms)
+				InitializePlatformSupportModulesInManaged (46ms)
+				SetLoadedEditorAssemblies (35ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (3ms)
-				ProcessInitializeOnLoadAttributes (454ms)
-				ProcessInitializeOnLoadMethodAttributes (98ms)
+				BeforeProcessingInitializeOnLoad (101ms)
+				ProcessInitializeOnLoadAttributes (2935ms)
+				ProcessInitializeOnLoadMethodAttributes (1120ms)
 				AfterProcessingInitializeOnLoad (0ms)
-				EditorAssembliesLoaded (0ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
-========================================================================
-Worker process is ready to serve import requests

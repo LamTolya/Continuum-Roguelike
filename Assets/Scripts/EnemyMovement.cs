@@ -22,15 +22,18 @@ public class EnemyMovement : MonoBehaviour
   
     private void OnEnable()
     {
+        SceneManager.PlayerLoaded += SetPlayer;
         StartCoroutine(RandomPos());
-        LoadPosition.PlayerLoaded += SetPlayer;
     }
 
     private void OnDisable()
     {
-        LoadPosition.PlayerLoaded -= SetPlayer;
+        SceneManager.PlayerLoaded -= SetPlayer;
     }
-
+    private void Start()
+    {
+        
+    }
     void SetPlayer(Player player)
     {
         Player = player.gameObject.transform;
@@ -68,9 +71,8 @@ public class EnemyMovement : MonoBehaviour
     public void BackTarget()
     {
         distance = (transform.position - Player.position).sqrMagnitude;
-        if (minDistance > distance)
+        if (minDistance > distance && Player != null)
         {
-
             Target = Player.position;
         }
       
@@ -78,7 +80,7 @@ public class EnemyMovement : MonoBehaviour
     
     public void UpdateTarget()
     {
-        Target = GetTarget();
+        if(Player != null) Target = GetTarget();
     }
 
     Vector3 GetTarget()

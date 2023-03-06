@@ -1,23 +1,17 @@
 ﻿using UnityEngine;
 public class PlayerFlash: HealthFlash
 {
-    [SerializeField] private Material WhiteFlash;
-    public override void Flash()
+    private void OnEnable()
     {
-        base.Flash();
-        Renderer.material = FlashMaterial;
-        Invoke(nameof(FlashWhite), 0.2f);
+        Renderer = gameObject.GetComponent<SpriteRenderer>();
+    }
+    private void Start()
+    {
+        Player.PlayerDamaged += Flash;
     }
 
-    void FlashWhite()
+    private void OnDisable()
     {
-        Renderer.material = WhiteFlash;
-        Invoke(nameof(Back), 0.07f);
-    }
-
-    public override void Back()
-    {
-        base.Back();
-        Renderer.material = NormalMaterial;
+        Player.PlayerDamaged -= Flash;
     }
 }

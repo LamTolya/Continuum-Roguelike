@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class AttackModule: MonoBehaviour
 {
     [SerializeField] private Enemy EnemyData;
-    [SerializeField] private OnEnemyTriggerEntered DamageHitbox;
+    [SerializeField] private EnemyOnTriggerEntered DamageHitbox;
 
     public void DealDamageInZone()
     {
@@ -12,7 +12,12 @@ public class AttackModule: MonoBehaviour
     }
     private void DealDamage(List<Collider> hitList)
     {
-        foreach (Collider collider in hitList) collider.gameObject.GetComponent<Player>()?.TakeDamage(EnemyData.enemyDamage);
+        foreach (Collider collider in hitList) 
+        {
+            collider.GetComponent<IDamageable>()?.TakeDamage(EnemyData.enemyDamage);
+        }
+
+       
     }
 }
 

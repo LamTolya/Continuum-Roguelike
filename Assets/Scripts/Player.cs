@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using System;
 public class Player : MonoBehaviour, IDamageable
 {
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour, IDamageable
             playerData.Health -= damage;
         }
         PlayerDamaged?.Invoke();
+
     }
 
     private void Start()

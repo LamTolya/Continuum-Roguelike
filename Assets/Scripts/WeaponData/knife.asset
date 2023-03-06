@@ -15,7 +15,7 @@ MonoBehaviour:
   ItemName: Knife
   ItemSprite: {fileID: 1211998406744890917, guid: 33610e2ad7b58b84a8aea242f3e5574d, type: 3}
   ItemUISprite: {fileID: 6813553822765877458, guid: 33610e2ad7b58b84a8aea242f3e5574d, type: 3}
-  WeaponDamage: 99999
+  WeaponDamage: 3
   HitBox: {fileID: 3617638554484981492, guid: dc38e0c03b2b9e84ebbb9623f21012af, type: 3}
   HitBoxNavigation: {fileID: 11400000, guid: 5dc034b13676c814f94f4b807c0c0738, type: 2}
   WeaponMoves: []

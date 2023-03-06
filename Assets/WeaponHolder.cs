@@ -29,7 +29,6 @@ public class WeaponHolder : MonoBehaviour
 
     void ResetHold()
     {
-        CurrentWeapon.GetComponent<Weapon>().SetOff();
         CurrentWeapon = null;
         WearDefault();
     }
@@ -37,11 +36,9 @@ public class WeaponHolder : MonoBehaviour
     private void UpdateHold(Weapon newWeapon)
     {
         if (newWeapon == null) return;
-
-        if (CurrentWeapon != null)
+        if(CurrentWeapon != null)
         {
-            CurrentWeapon.GetComponent<Weapon>().SetOff();
-            CurrentWeapon = null;
+            CurrentWeapon.gameObject.transform.parent = null;
         }
         CurrentWeapon = newWeapon;
         newWeapon.gameObject.transform.position = WeaponTransform.position;
@@ -52,14 +49,14 @@ public class WeaponHolder : MonoBehaviour
 
     private void OnEnable()
     {
-        Weapon.WeaponDestroyed += WearDefault;
+        Weapon.WeaponDestroyed += ResetHold;
         Player.PlayerDied += ResetHold;
         Weapon.WeaponInteracted += UpdateHold;
     }
     private void OnDisable()
     {
         Player.PlayerDied -= ResetHold;
-        Weapon.WeaponDestroyed -= WearDefault;
+        Weapon.WeaponDestroyed -= ResetHold;
         Weapon.WeaponInteracted -= UpdateHold;
     }
 }

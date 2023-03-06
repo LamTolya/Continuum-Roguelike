@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 4331144759430082883}
   - component: {fileID: 4331144759430082881}
   - component: {fileID: 4331144759430082911}
+  - component: {fileID: 276139693}
   m_Layer: 0
   m_Name: 'melee enemy '
   m_TagString: Untagged
@@ -269,7 +270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 100
-  enemyDamage: 2
+  enemyDamage: 0.5
+  enemyFlash: {fileID: 276139693}
 --- !u!65 &4331144759430082881
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -304,6 +306,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 4331144759430082910}
+--- !u!114 &276139693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4331144759430082885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c6f7796be757f45b4c7beca4891948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlashMaterial: {fileID: 2100000, guid: ceb7a2bfb972a8940ba01bca9428478c, type: 2}
+  WhiteFlash: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  NormalMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  SpriteRenderer: {fileID: 4331144760948569370}
 --- !u!1 &4331144760010386681
 GameObject:
   m_ObjectHideFlags: 0

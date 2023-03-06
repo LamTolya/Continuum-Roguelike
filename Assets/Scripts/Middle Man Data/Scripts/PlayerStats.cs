@@ -18,19 +18,20 @@ public class PlayerStats : ScriptableObject
 
     private void OnEnable()
     {
-        Weapon.WeaponEquipped += UpdateStats;
+        Weapon.WeaponInteracted += UpdateStats;
         Totem.TotemEquiped += ModifyStats;
         Player.PlayerDied += ResetStats;
     }
     private void OnDisable()
     {
-        Weapon.WeaponEquipped -= UpdateStats;
+        Weapon.WeaponInteracted -= UpdateStats;
         Totem.TotemEquiped -= ModifyStats;
         Player.PlayerDied -= ResetStats;
     }
 
-    private void UpdateStats(WeaponData weaponData)
+    private void UpdateStats(Weapon Weapon)
     {
+        WeaponData weaponData = Weapon.GetWeaponData();
         AttackDamage = BaseDamage + weaponData.WeaponDamage;
         Debug.Log($"Player Stats: Weapon's Damage: {weaponData.WeaponDamage}");
 

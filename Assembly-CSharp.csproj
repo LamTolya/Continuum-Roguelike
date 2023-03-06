@@ -108,6 +108,7 @@
     <Compile Include="Assets\Scripts\Interfaces\IAttackNavigation.cs" />
     <Compile Include="Assets\Scripts\Scenary.cs" />
     <Compile Include="Assets\Scripts\AttackModule.cs" />
+    <Compile Include="Assets\Scripts\EnemyOnTriggerEntered.cs" />
     <Compile Include="Assets\Scripts\IPlayer.cs" />
     <Compile Include="Assets\Scripts\LoadPlayer.cs" />
     <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
@@ -127,7 +128,6 @@
     <Compile Include="Assets\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Components\IImpulsive.cs" />
     <Compile Include="Assets\Scripts\LoadPosition.cs" />
-    <Compile Include="Assets\Scripts\OnEnemyTriggerEntered.cs" />
     <Compile Include="Assets\Scripts\UIWeaponDisplay.cs" />
     <Compile Include="Assets\Scripts\PlayerEquipments.cs" />
     <Compile Include="Assets\Scripts\MousePositionInput.cs" />
@@ -151,6 +151,7 @@
     <Compile Include="Assets\Scripts\WallTest.cs" />
     <Compile Include="Assets\Scripts\WeaponData.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
+    <Compile Include="Assets\Scripts\EnemyFlash.cs" />
     <Compile Include="Assets\Scripts\UIOutput.cs" />
     <Compile Include="Assets\NPCMovement.cs" />
     <Compile Include="Assets\Scripts\AttackTriggerInput.cs" />

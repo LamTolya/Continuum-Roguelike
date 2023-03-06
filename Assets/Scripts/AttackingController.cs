@@ -32,20 +32,23 @@ public class AttackingController : MonoBehaviour
     private void Attack()
     {
         DealDamage(hitColliders);
-        if (hitColliders.Count > 0) 
-        {
-            AttackFinished?.Invoke(); 
-        }
-
-        Debug.Log("attacking" + playerStats.AttackDamage);
     }
 
     private void DealDamage(List<Collider> hitList)
     {
+        bool AttackOnEnemies = false;
         foreach (Collider collider in hitList)
         {
-            collider.gameObject.GetComponent<AddImpulse>()?.AddForce(gameObject.transform.position, 2000, -1);
-            collider.gameObject.GetComponent<Enemy>()?.TakeDamage(playerStats.AttackDamage);
+            if (collider.GetComponent<Player>() == null && collider.GetComponent<IDamageable>() != null) 
+            {
+                collider.GetComponent<IDamageable>().TakeDamage(playerStats.AttackDamage);
+                AttackOnEnemies = true;
+            } 
+        }
+
+        if (AttackOnEnemies)
+        {
+            AttackFinished?.Invoke();
         }
     }
    

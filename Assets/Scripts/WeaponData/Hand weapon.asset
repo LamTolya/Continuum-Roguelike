@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Hand weapon
   m_EditorClassIdentifier: 
   ItemName: hand
-  ItemSprite: {fileID: 167080804, guid: 37ea728f4f60ddb46b5fe92ead660b59, type: 3}
+  ItemSprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   ItemUISprite: {fileID: 167080804, guid: 37ea728f4f60ddb46b5fe92ead660b59, type: 3}
   WeaponDamage: 10
   HitBox: {fileID: 5373270005736055457, guid: c1d9cd21345d77e449c5d8457680e415, type: 3}
   HitBoxNavigation: {fileID: 11400000, guid: c4d1b26eaffcc254eb85f91b105caa21, type: 2}
+  WeaponMoves: []
   Permanent: 1

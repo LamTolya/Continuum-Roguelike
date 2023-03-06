@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57289a3a09d71cd4c8ed78bc429c1897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackDelay: 8.68
+  AttackDelay: 6.13
   attackDistance: 1
   Player: {fileID: 0}
   AnimatorAttack: {fileID: 5920633164435751760}
@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 4293264196028850448}
   - component: {fileID: 4293264196028850450}
   - component: {fileID: 4293264196028850444}
+  - component: {fileID: 2244711935944646458}
   m_Layer: 0
   m_Name: heavy enemy
   m_TagString: Untagged
@@ -201,7 +202,7 @@ MonoBehaviour:
   Target: {x: 0, y: 0, z: 0}
   TargetReached: 0
   minDistance: 0
-  movementDelay: 2.84
+  movementDelay: 0.3
 --- !u!114 &4293264196028850448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: 100
   enemyDamage: 2
+  enemyFlash: {fileID: 0}
 --- !u!65 &4293264196028850450
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -250,6 +252,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 4293264196028850445}
+--- !u!114 &2244711935944646458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4293264196028850454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c6f7796be757f45b4c7beca4891948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlashMaterial: {fileID: 2100000, guid: ceb7a2bfb972a8940ba01bca9428478c, type: 2}
+  WhiteFlash: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  NormalMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  SpriteRenderer: {fileID: 4293264196655523145}
 --- !u!1 &4293264196445801477
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +348,7 @@ SpriteRenderer:
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.6866667, y: 1.2866668}
+  m_Size: {x: 0.7133333, y: 0.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0

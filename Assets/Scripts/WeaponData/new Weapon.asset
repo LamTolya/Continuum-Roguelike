@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d6faa69eb2f88409b0555ee648540f, type: 3}
+  m_Name: new Weapon
+  m_EditorClassIdentifier: 
+  ItemName: "\u043D\u043E\u0432\u043E\u0435 \u043E\u0440\u0443\u0436\u0438\u0435"
+  ItemSprite: {fileID: 6155212226941906339, guid: 33610e2ad7b58b84a8aea242f3e5574d, type: 3}
+  ItemUISprite: {fileID: -5082647686934749709, guid: 33610e2ad7b58b84a8aea242f3e5574d, type: 3}
+  WeaponDamage: 1
+  HitBox: {fileID: 3617638554484981492, guid: dc38e0c03b2b9e84ebbb9623f21012af, type: 3}
+  HitBoxNavigation: {fileID: 11400000, guid: 5dc034b13676c814f94f4b807c0c0738, type: 2}
+  WeaponMoves: []
+  Permanent: 0

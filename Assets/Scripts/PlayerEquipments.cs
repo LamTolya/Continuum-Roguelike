@@ -9,8 +9,9 @@ public class PlayerEquipments: ScriptableObject
 
     [NonSerialized] public WeaponData WeaponEquipment;
 
-    public void SetWeaponEquipment(WeaponData weaponData)
+    public void SetWeaponEquipment(Weapon weapon)
     {
+        WeaponData weaponData = weapon.GetWeaponData();
         WeaponEquipment = weaponData;
         Debug.Log($"Player Equipments: Weapon: {weaponData.ItemName}");
     }
@@ -21,14 +22,14 @@ public class PlayerEquipments: ScriptableObject
     }
     public void OnEnable()
     {
-        Weapon.WeaponEquipped += SetWeaponEquipment;
+        Weapon.WeaponInteracted += SetWeaponEquipment;
         Weapon.WeaponDestroyed += ResetEquipments;
         Player.PlayerDied += ResetEquipments;
     }
 
     private void OnDisable()
     {
-        Weapon.WeaponEquipped -= SetWeaponEquipment;
+        Weapon.WeaponInteracted -= SetWeaponEquipment;
         Weapon.WeaponDestroyed -= ResetEquipments;
         Player.PlayerDied -= ResetEquipments;
     }

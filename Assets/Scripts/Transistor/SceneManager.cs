@@ -9,7 +9,7 @@ public class SceneManager : MonoBehaviour
     [SerializeField] private Scene ResetScene;
 
     public static event Action PlayerReseted;
-
+    public static event Action<Player> PlayerLoaded;
 
     private void Start()
     {
@@ -21,6 +21,8 @@ public class SceneManager : MonoBehaviour
     {
         SceneDoor.DoorOpened += LoadPlayer;
         Player.PlayerDied += ResetPlayer;
+        PlayerLoaded?.Invoke(Player_Obj.GetComponent<Player>());
+
     }
     private void OnDisable()
     {

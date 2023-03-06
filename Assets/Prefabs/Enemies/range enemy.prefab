@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 8659495588914035540}
   - component: {fileID: 8659495588914035531}
   - component: {fileID: 8659495588914035528}
+  - component: {fileID: 1113336527}
   m_Layer: 0
   m_Name: range enemy
   m_TagString: Untagged
@@ -175,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: 30
   enemyDamage: 1
+  enemyFlash: {fileID: 0}
 --- !u!65 &8659495588914035531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -209,6 +211,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 8659495588914035529}
+--- !u!114 &1113336527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8659495588914035542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c6f7796be757f45b4c7beca4891948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlashMaterial: {fileID: 2100000, guid: ceb7a2bfb972a8940ba01bca9428478c, type: 2}
+  WhiteFlash: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  NormalMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  SpriteRenderer: {fileID: 8659495588641498590}
 --- !u!1 &8659495588941294351
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +238,7 @@ GameObject:
   - component: {fileID: 8659495588941294350}
   - component: {fileID: 8659495588941294349}
   - component: {fileID: 8090824577844158193}
+  - component: {fileID: 668034354}
   m_Layer: 0
   m_Name: attack
   m_TagString: Untagged
@@ -272,6 +291,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 8659495589375165882}
+--- !u!114 &668034354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8659495588941294351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c3ed06aca295fc4093251263f654715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileObj: {fileID: 6179086941795449625, guid: d5ffbe52500ffdd4a8aca095ea5b15cb, type: 3}
+  AttackLead: {fileID: 8659495588941294349}
 --- !u!1 &8659495589375165824
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +380,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: -1249728861, guid: c2f6d817a00454e40bb94200af85c92e, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -355,7 +388,7 @@ SpriteRenderer:
   m_Size: {x: 0.7133333, y: 0.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &8659495589375165882
@@ -393,15 +426,15 @@ MonoBehaviour:
   EventEnded:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8659495588941294351}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 668034354}
+        m_TargetAssemblyTypeName: Shot, Assembly-CSharp
+        m_MethodName: Shotting
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 1
