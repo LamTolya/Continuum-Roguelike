@@ -8,6 +8,11 @@ public class HealthFlash: MonoBehaviour
 
     protected SpriteRenderer Renderer;
 
+    private void Start()
+    {
+        Renderer = GetComponent<SpriteRenderer>();
+    }
+
     public void Flash() 
     {
         if(Renderer != null)

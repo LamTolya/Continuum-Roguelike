@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 public class Enemy : MonoBehaviour, IDamageable
 {
     [SerializeField] float enemyHealth = 30f;
@@ -8,13 +9,24 @@ public class Enemy : MonoBehaviour, IDamageable
     public float enemyDamage = 2f;
     public static event Action EnemyDied;
     public static event Action EnemySpawned;
+    public UnityEvent EnemyAttacked;
+    EnemyMessenger messanger;
 
-    [SerializeField]private EnemyFlash enemyFlash;
-   
+    void Start()
+    {
+        if (GetComponent<EnemyMessenger>() == null) messanger = gameObject.AddComponent<EnemyMessenger>();
+    }
+
+    public float GetHealth()
+    {
+        return enemyHealth;
+    }
     public void TakeDamage(float damage)
     {
         enemyHealth -= damage;
-        enemyFlash.Flash();
+        messanger.SentDamage(damage);
+        EnemyAttacked?.Invoke();
+
         if (enemyHealth <= 0)
         {
             Destroy(gameObject);

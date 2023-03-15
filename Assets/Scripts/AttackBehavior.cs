@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Events;
-
+// change the attack behavior, it lags badly
+// healthbar should dissapear 
 public class AttackBehavior: MonoBehaviour
 {
     [Header("Attack Stats")]
@@ -35,7 +36,7 @@ public class AttackBehavior: MonoBehaviour
 
     public Vector3 GetTarget()
     {
-        return Target;
+        return Player.transform.position;
     }
   
 }

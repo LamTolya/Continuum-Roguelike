@@ -10,6 +10,8 @@ public class SceneManager : MonoBehaviour
 
     public static event Action PlayerReseted;
     public static event Action<Player> PlayerLoaded;
+    // totalPoints
+
 
     private void Start()
     {

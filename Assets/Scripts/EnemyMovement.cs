@@ -12,14 +12,12 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     public Vector3 Target;
     [SerializeField]
-    bool TargetReached = false;
+    bool TimerReached = true;
 
     [SerializeField] private float minDistance;
     [Range(0.03f, 18f)]
-    [SerializeField] float movementDelay;
+    [SerializeField] float MovementDelay;
     float distance;
-    bool Attacked;
-  
     private void OnEnable()
     {
         SceneManager.PlayerLoaded += SetPlayer;
@@ -30,37 +28,38 @@ public class EnemyMovement : MonoBehaviour
     {
         SceneManager.PlayerLoaded -= SetPlayer;
     }
-    private void Start()
-    {
-        
-    }
     void SetPlayer(Player player)
     {
         Player = player.gameObject.transform;
     }
 
-    private void LateUpdate()
-    {
-        Move();
-        Debug.DrawLine(transform.position, Target);
 
+    private void Start()
+    {
+        MovementDelay += UnityEngine.Random.Range(-0.01f, 0.05f);
     }
 
+    private void LateUpdate()
+    {
+        if(transform.position == Target && TimerReached)
+        {
+            StartCoroutine(nameof(RandomPos));
+        }
+        Move();
+    }
+    // experimenting without While cycle in Move()
     public virtual void Move()
     {
         if (transform.position == Target) return;
         transform.position = Vector3.MoveTowards(transform.position, Target, speed * Time.deltaTime);
     }
 
-
     IEnumerator RandomPos()
     {
-        while (true)
-        {
-            UpdateTarget();
-            yield return new WaitForSeconds(movementDelay);
-        }
-      
+        TimerReached = false;
+        UpdateTarget();
+        yield return new WaitForSeconds(MovementDelay);
+        TimerReached = true;
     }
     
     public void SetTarget(Vector3 target)

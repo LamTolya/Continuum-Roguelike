@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class WeaponData : ItemData
 {
     public int WeaponDamage;
+    public float ReloadTime;
     public GameObject HitBox;
     public Navigation HitBoxNavigation;
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIPointNotification : MonoBehaviour
 {
     private Animator Animator;
+    int totalComboPoint;
     void OnEnable()
     {
         Enemy.EnemyDied += AddPoint;
@@ -22,6 +23,8 @@ public class UIPointNotification : MonoBehaviour
 
     void AddPoint()
     {
+        //totalComboPoint += point
         Animator.SetTrigger("Notify");
+        
     }
 }

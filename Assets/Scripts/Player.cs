@@ -12,10 +12,11 @@ public class Player : MonoBehaviour, IDamageable
     public static event Action<GameObject> PlayerActivated;
     public static event Action PlayerDamaged;
     public static event Action PlayerDied;
+    public UnityEvent PlayerAttacked;
 
     public void TakeDamage(float damage)
-    { 
-        //if (playerData.Health-damage < 0) return;
+    {
+        PlayerAttacked?.Invoke();
         if (playerData.Health-damage <= 0)
         {
             PlayerDied?.Invoke();

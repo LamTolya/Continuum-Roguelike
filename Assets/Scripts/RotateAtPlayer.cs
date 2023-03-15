@@ -5,6 +5,7 @@ public class RotateAtPlayer: MonoBehaviour
     [Header("Required Components")]
     [SerializeField] protected Transform Player;
     [SerializeField] private AnimatorAttack AnimatorAttack;
+    [SerializeField] float additionalDegrees;
     float distance;
     private void Update()
     {
@@ -15,7 +16,7 @@ public class RotateAtPlayer: MonoBehaviour
     public void ChangeAttackPosition()
     {
         float angle = AngleBetweenTwoPoints(transform.position, Player.position);
-        transform.rotation = Quaternion.Euler(new Vector3(-90f, 0f, angle));
+        transform.rotation = Quaternion.Euler(new Vector3(90f, 0f, angle + additionalDegrees));
     }
 
     float AngleBetweenTwoPoints(Vector3 a, Vector3 b)

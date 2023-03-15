@@ -29,7 +29,7 @@ public class AnimationController : MonoBehaviour
         Animator.Play(Animation);
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         UpdateAnimation();
     }

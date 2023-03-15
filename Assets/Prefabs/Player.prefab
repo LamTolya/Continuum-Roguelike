@@ -73,7 +73,6 @@ GameObject:
   - component: {fileID: 923147588148478652}
   - component: {fileID: 923147588148478653}
   - component: {fileID: 923147588148478642}
-  - component: {fileID: 923147588148478643}
   m_Layer: 0
   m_Name: playerSprite
   m_TagString: Untagged
@@ -181,21 +180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 11400000, guid: 66b8bc0f16662554e92b36afc8ffccca, type: 2}
---- !u!114 &923147588148478643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923147588148478654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa327e568234e7c4cbeea6df45432370, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FlashMaterial: {fileID: 2100000, guid: ceb7a2bfb972a8940ba01bca9428478c, type: 2}
-  NormalMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  WhiteFlash: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
 --- !u!1 &923147588261412187
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +397,9 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 120852652fc4ae541868fd0cdf067d1e, type: 2}
   playerStats: {fileID: 11400000, guid: 916d62622f4bc4c409d2d633d1780254, type: 2}
   playerInput: {fileID: 11400000, guid: 66b8bc0f16662554e92b36afc8ffccca, type: 2}
+  PlayerAttacked:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &923147588866428917
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -832,4 +819,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponData: {fileID: 11400000, guid: cab81fbededf9b04ba883a5bf92e11ac, type: 2}
   weaponDurability: -1
-  WeaponEquiped: 0

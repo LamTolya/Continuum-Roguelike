@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class Weapon : InteractableItem
 {
-
     [SerializeField] private WeaponData WeaponData;
 
     [SerializeField] private int weaponDurability;

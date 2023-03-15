@@ -213,7 +213,6 @@ GameObject:
   - component: {fileID: 4331144759430082883}
   - component: {fileID: 4331144759430082881}
   - component: {fileID: 4331144759430082911}
-  - component: {fileID: 276139693}
   m_Layer: 0
   m_Name: 'melee enemy '
   m_TagString: Untagged
@@ -252,11 +251,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   Player: {fileID: 0}
-  DeltaRandom: 3.22
+  DeltaRandom: 1.92
   Target: {x: 0, y: 0, z: 0}
-  TargetReached: 0
+  TimerReached: 1
   minDistance: 13
-  movementDelay: 0.95
+  MovementDelay: 0.6
 --- !u!114 &4331144759430082883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,9 +268,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5e5692bcaf02b4eab9ccd2935fe1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 100
+  enemyHealth: 50
   enemyDamage: 0.5
-  enemyFlash: {fileID: 276139693}
+  EnemyAttacked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6237075283847280873}
+        m_TargetAssemblyTypeName: HealthFlash, Assembly-CSharp
+        m_MethodName: Flash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  damageText: {fileID: 0}
 --- !u!65 &4331144759430082881
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -306,22 +320,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 4331144759430082910}
---- !u!114 &276139693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4331144759430082885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27c6f7796be757f45b4c7beca4891948, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FlashMaterial: {fileID: 2100000, guid: ceb7a2bfb972a8940ba01bca9428478c, type: 2}
-  WhiteFlash: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
-  NormalMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  SpriteRenderer: {fileID: 4331144760948569370}
 --- !u!1 &4331144760010386681
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +363,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4331144760010386681}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57289a3a09d71cd4c8ed78bc429c1897, type: 3}
   m_Name: 
@@ -412,6 +410,7 @@ GameObject:
   - component: {fileID: 4331144760948569372}
   - component: {fileID: 4331144760948569370}
   - component: {fileID: 4331144760948569373}
+  - component: {fileID: 6237075283847280873}
   m_Layer: 0
   m_Name: enemysprite
   m_TagString: Untagged
@@ -506,3 +505,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &6237075283847280873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4331144760948569375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b41bb93275f45643a342f1430eb2191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlashMaterial: {fileID: 2100000, guid: ceb7a2bfb972a8940ba01bca9428478c, type: 2}
+  WhiteFlash: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  NormalMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
